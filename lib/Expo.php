@@ -58,12 +58,13 @@ class Expo
      *
      * @param $interest
      * @param $token
+     * @param $deviceName
      *
      * @return string
      */
-    public function subscribe($interest, $token)
+    public function subscribe(string $interest, string $token, ?string $deviceName)
     {
-        return $this->registrar->registerInterest($interest, $token);
+        return $this->registrar->registerInterest($interest, $token, $deviceName);
     }
 
     /**
