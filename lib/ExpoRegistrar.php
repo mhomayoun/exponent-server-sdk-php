@@ -27,18 +27,19 @@ class ExpoRegistrar
      *
      * @param $interest
      * @param $token
+     * @param $deviceName
      *
      * @throws ExpoRegistrarException
      *
      * @return string
      */
-    public function registerInterest($interest, $token)
+    public function registerInterest(string $interest, string $token, ?string $deviceName)
     {
         if (! $this->isValidExpoPushToken($token)) {
             throw ExpoRegistrarException::invalidToken();
         }
 
-        $stored = $this->repository->store($interest, $token);
+        $stored = $this->repository->store($interest, $token, $deviceName);
 
         if (!$stored) {
             throw ExpoRegistrarException::couldNotRegisterInterest();
