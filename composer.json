@@ -1,5 +1,6 @@
 {
     "name": "mhomayoun/exponent-server-sdk-php",
+    "version": "1.0.0",
     "description": "Server-side library for working with Expo push notifications using PHP",
     "keywords": ["expo", "exponent", "push", "notifications"],
     "type": "library",
